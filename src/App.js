@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Layout, Header, Navigation, Drawer, Content, Button, Card, CardText } from 'react-mdl';
 import './App.css';
+import Main from './components/main';
+import {link} from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Hello world</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <div style={{height: '300px', position: 'relative'}}>
+        <Layout fixedHeader>
+            <Header title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>The Title</strong></span>}>
+                <Navigation>
+                    <a href="#">About Me</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Resume</a>
+                </Navigation>
+            </Header>
+            <Drawer title="Title">
+                <Navigation>
+                    <a href="#">About Me</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Resume</a>
+                </Navigation>
+            </Drawer>
+            <Content />
+        </Layout>
+    </div>
     );
   }
 }
